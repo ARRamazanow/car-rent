@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css/style.css">
     <title>Document</title>
 </head>
-<body>
-  <img class="pic" src="./img/ban.png" alt="baner">
+<body >
+  <img class="pic" src="./img/kva_main.png" alt="baner">
     <header>
         <div class="header_inner">
-            <a href="#" class="header_logo">LOGO</a>
+            <a href="#" class="header_logo">Cars Rental</a>
             <nav class="header_main-nav">
                 <a href="#">Home</a>
                 <a href="#">Explore cars</a>
@@ -20,11 +23,90 @@
         
 
             <nav class="social-nav">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fas fa-xmark"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="f"></i></a>
+            <a href="#"><i class="i"></i></a>
+            <a href="#"><i class="g"></i></a>
         </nav>
     </div>
-    </header>
+
+</header>
+
+
+
+
+    <div class="elements">
+        
+        <form>
+            <label for="car">Pasirinkite automobili:</label>
+            <select id="car" name="car">
+                 <option value="----">----</option>
+              <option value="ford">Ford</option>
+              <option value="hyundai">Hyundai</option>
+              <option value="opel">Opel</option>
+              <option value="peugeot">Peugeot</option>
+              <option value="vw">Volkswagen</option>
+              <option value="mb">Mercedes</option>
+              <option value="skoda">Skoda</option>
+            </select>
+        
+            <label for="model">Pasirinkite modeli:</label>
+            <select id="model" name="model">
+                 <option value="----">----</option>
+              <option value="focus">Focus</option>
+              <option value="i30">i30</option>
+              <option value="Corsa">corsa</option>
+              <option value="307">307</option>
+              <option value="Golf">golf</option>
+              <option value="A-class">A-class</option>
+              <option value="Fabia">Fabia</option>
+
+            </select>
+        
+            <label for="body">Kebulo tipas:</label>
+            <select id="body" name="body">
+                 <option value="----">----</option>
+              <option value="hatchback">Hatchback</option>
+              <option value="sedan">Sedan</option>
+              <option value="suv">SUV</option>
+              
+            </select>
+        
+            <label for="year">Metai:</label>
+            <select id="year" name="year">
+                      <option value="----">----</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+            </select>
+        
+            <label for="reserv">Rezervuok:</label>
+            <select id="reserv" name="reserv">
+                      <option value="----">----</option>
+              <option value="1">1 diena</option>
+              <option value="2">2 dienas</option>
+              <option value="30">30 dienu</option>
+            </select>
+
+            <button type="sub">Ok</button>
+            
+          </form>
+         
+    </div>
+    <div class="cont">
+        <img src="/img/ekranasl.jpg" alt="ekranas" class="vidus">
+        </div>
+        <div class="cont2">
+            <img src="/img/ratas.jpg" alt="ratas" class="ratas">
+            </div>
+
+    <div>
+    <h3 class="map">Kaip mus rasti:</h3>
+    <iframe
+    src="https://www.openstreetmap.org/export/embed.html?bbox=25.2798%2C54.5871%2C25.3344%2C54.6154&layer=mapnik&marker=54.6892%2C25.2798"
+    >
+</iframe>
+</div>
+
+
 </body>
 </html>
