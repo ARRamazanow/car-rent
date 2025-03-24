@@ -7,10 +7,10 @@
 
 
 body {
-    font-family: Arial, sans-serif;
+    
     background-color: #f4f1ff;
     background-image: url(/img/back.jpg);
-    
+    overflow:visible; 
 }
 
 
@@ -115,7 +115,10 @@ header {
     color: #2b92ff;
 }
 
-
+.submit{
+    user-select: none;
+    color: #2a4744;
+}
 
 
  form {
@@ -156,6 +159,7 @@ header {
       cursor: pointer;
       font-size: 16px;
       user-select: none;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     button:hover {
@@ -167,8 +171,7 @@ header {
     iframe {
         width: 100%;
         height: 400px;
-        border: 0;
-        border: 1px solid black"
+        border: 1px solid black;
     }
 
     .map {
@@ -180,6 +183,7 @@ header {
 
     .cont{
         display: flex;
+        
     }
 
     .vidus{
@@ -188,19 +192,30 @@ header {
        margin-left: 95px;
        border-radius: 20px;
        
-       
-      
-        }
+       }
 
-    .cont2{
+  
+
+    .social-group{
+        user-select: none;
         display: flex;
-        margin-left: 1255px;
-    }
-
-    .ratas {
-        height: 300px;
-        margin-top: -400px;
-        border-radius: 20px;
-    }
-
+        justify-content: center;
     
+      }
+    .ig{
+      width: 30px;
+    }
+    .fb{
+      width: 30px;
+    }
+    .google{
+      width: 60px;
+    }
+    .in{
+      width: 30px;
+      margin-left: 5px;
+    }
+    .ig:hover, .fb:hover, .google:hover, .in:hover{
+      width: 35px;
+      
+    }

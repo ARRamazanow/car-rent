@@ -1,75 +1,80 @@
+
 const carData = {
-    Ford: {
-      models: ["Focus", "Fiesta", "Mustang"],
-      bodyTypes: ["Hatchback", "Sedan", "Coupe"],
-      years: ["2020", "2021", "2022"]
-    },
-    Hyundai: {
-      models: ["Elantra", "Sonata", "Tucson"],
-      bodyTypes: ["Sedan", "SUV", "Hatchback"],
-      years: ["2019", "2020", "2021"]
-    },
-    Opel: {
-      models: ["Astra", "Corsa", "Mokka"],
-      bodyTypes: ["Hatchback", "Sedan", "SUV"],
-      years: ["2018", "2019", "2020"]
-    },
-    Peugeot: {
-      models: ["208", "3008", "508"],
-      bodyTypes: ["Hatchback", "SUV", "Sedan"],
-      years: ["2018", "2019", "2020"]
-    },
-    VW: {
-      models: ["Golf", "Polo", "Tiguan"],
-      bodyTypes: ["Hatchback", "Sedan", "SUV"],
-      years: ["2020", "2021", "2022"]
-    },
-    MB: {
-      models: ["A-Class", "C-Class", "E-Class"],
-      bodyTypes: ["Sedan", "Coupe", "SUV"],
-      years: ["2020", "2021", "2022"]
-    },
-    Skoda: {
-      models: ["Octavia", "Superb", "Kodiaq"],
-      bodyTypes: ["Sedan", "Hatchback", "SUV"],
-      years: ["2019", "2020", "2021"]
-    }
-  };
+  ford: {
+    models: ["Focus", "Fiesta", "Mustang"],
+    years: ["2023", "2024", "2025"],
+    body: ['hatchback', "coupe"]
+  },
+  hyundai: {
+    models: ["i30", "Tucson", "Santa Fe"],
+    years: ["2022", "2023", "2024"],
+    body: ['hatchback', "suv"]
+  },
+  opel: {
+    models: ["Astra", "Corsa", "Insignia"],
+    years: ["2023", "2024", "2025"],
+    body: ['hatchback', "coupe", "universalas"]
+  },
+  peugeot: {
+    models: ["308", "3008", "5008"],
+    years: ["2023", "2024", "2025"],
+    body: ['hatchback', "suv"]
+  },
+  vw: {
+    models: ["Golf", "Passat", "Tiguan"],
+    years: ["2023", "2024", "2025"],
+    body: ['hatchback', "universalas", "suv"]
+  },
+  mb: {
+    models: ["A-class", "C-class", "E-class"],
+    years: ["2021", "2024", "2025"],
+    body: ['hatchback', "sedanas"]
+  },
+  skoda: {
+    models: ["Fabia", "Octavia", "Superb"],
+    years: ["2022", "2024", "2025"],
+    body: ['hatchback', "sedanas"]
+  }
+};
 
-  // Получаем элементы DOM
-  const carsSelect = document.getElementById('cars');
-  const additionalFieldsDiv = document.getElementById('additionalFields');
-  const modelsSelect = document.getElementById('models');
-  const bodyTypeSelect = document.getElementById('bodyType');
+function updateCarOptions() {
+  const carSelect = document.getElementById('car');
+  const modelSelect = document.getElementById('model');
   const yearSelect = document.getElementById('year');
+  const bodySelect = document.getElementById('body');
+  const selectedCar = carSelect.value;
 
-  // Слушаем событие выбора автомобиля
-  carsSelect.addEventListener('change', function() {
-    const selectedCar = carsSelect.value;
 
-    // Если выбран автомобиль, показываем дополнительные поля
-    if (selectedCar && carData[selectedCar]) {
-      additionalFieldsDiv.style.display = 'block';
+  modelSelect.innerHTML = '<option value="----">----</option>';
+  yearSelect.innerHTML = '<option value="----">----</option>';
+  bodySelect.innerHTML = '<option value="----">----</option>';
 
-      // Заполняем модели
-      fillSelect(modelsSelect, carData[selectedCar].models);
-      // Заполняем кузовы
-      fillSelect(bodyTypeSelect, carData[selectedCar].bodyTypes);
-      // Заполняем годы
-      fillSelect(yearSelect, carData[selectedCar].years);
-    } else {
-      additionalFieldsDiv.style.display = 'none';
-    }
-  });
+  if (selectedCar !== '----') {
+    const car = carData[selectedCar];
 
-  // Функция для заполнения <select> значениями
-  function fillSelect(selectElement, options) {
-    selectElement.innerHTML = ''; // Очищаем текущие значения
-
-    options.forEach(optionValue => {
+ 
+    car.models.forEach(model => {
       const option = document.createElement('option');
-      option.value = optionValue;
-      option.textContent = optionValue;
-      selectElement.appendChild(option);
+      option.value = model.toLowerCase();
+      option.textContent = model;
+      modelSelect.appendChild(option);
+    });
+
+   
+    car.years.forEach(year => {
+      const option = document.createElement('option');
+      option.value = year;
+      option.textContent = year;
+      yearSelect.appendChild(option);
+    });
+
+    
+    car.body.forEach(body => {
+      const option = document.createElement('option');
+      option.value = body.toLowerCase();
+      option.textContent = body;
+      bodySelect.appendChild(option);
     });
   }
+}
+document.getElementById('car').addEventListener('change', updateCarOptions);
