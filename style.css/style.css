@@ -57,7 +57,8 @@ header {
 }
 
 .header_logo:hover{
-       color: transparent
+       color: rgb(107, 81, 199);
+       transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .header__main-nav {
@@ -79,7 +80,7 @@ header {
     font-optical-sizing: auto;
     font-weight: bold;
     font-style: normal;
-    font-size:25px ;
+    font-size:18px ;
       
     
 }
@@ -197,25 +198,28 @@ header {
   
 
     .social-group{
+        display: inline-block;
         user-select: none;
         display: flex;
+        text-align: center;
         justify-content: center;
-    
-      }
+        align-items: center; 
+                    }
     .ig{
-      width: 30px;
+      width: 30px; height: 30px; 
+      
     }
     .fb{
-      width: 30px;
+      width: 30px; height: 30px; 
     }
     .google{
-      width: 60px;
+      width: 60px; height: 30px; 
     }
     .in{
-      width: 30px;
+      width: 30px; height: 30px; 
       margin-left: 5px;
     }
     .ig:hover, .fb:hover, .google:hover, .in:hover{
-      width: 35px;
+      transform: scale(1.2);
       
     }
